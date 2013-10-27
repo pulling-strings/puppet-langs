@@ -3,9 +3,16 @@
 # This module manages ruby
 class langs::ruby {
 
-  package{['rubygems','rake','ruby1.9.1-dev']:
+  package{['rubygems','rake']:
     ensure  => installed
   }
+
+  if(!defined(Package['ruby1.9.1-dev'])) {
+   package{'ruby1.9.1-dev':
+     ensure  => installed
+   }
+  }
+
 
   include rvm
 
