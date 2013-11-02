@@ -39,9 +39,6 @@ class langs::ruby {
         'rake':
           ruby_version => $ruby9,
           require      => Rvm_system_ruby[$ruby9];
-        'puppet':
-          ruby_version => $ruby9,
-          require      => Rvm_system_ruby[$ruby9];
       }
   }
 }
