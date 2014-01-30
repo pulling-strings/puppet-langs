@@ -2,6 +2,7 @@
 class langs {
   include ruby
   include langs::erlang
+  include langs::elixir
   include coffeescript
   include build_essential
 
