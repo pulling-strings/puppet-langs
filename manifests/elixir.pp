@@ -1,10 +1,10 @@
 # setting up elixir lang
 class langs::elixir {
-  $version = 'v0.12.2'
+  $version = 'v0.12.4'
 
   ensure_resource('package', 'unzip', {'ensure' => 'present' })
 
-  $url = "https://github.com/elixir-lang/elixir/releases/download/${version}/${version}.zip"
+  $url = "https://github.com/elixir-lang/elixir/releases/download/${version}/Precompiled.zip"
 
   file{"/usr/share/elixir-${version}":
     ensure => directory,
@@ -13,7 +13,7 @@ class langs::elixir {
   archive { $version:
     ensure        => present,
     url           => $url,
-    digest_string => '9a4cf1e7dfc02feea9496420d591e466',
+    digest_string => 'c6a41e761ee26687ec0939d666e0bc07',
     src_target    => '/usr/src',
     target        => "/usr/share/elixir-${version}",
     extension     => 'zip',
