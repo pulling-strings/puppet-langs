@@ -3,7 +3,7 @@
 # This module manages ruby
 class langs::ruby {
 
-  package{['rubygems','rake']:
+  package{['rubygems1.9.1','rake']:
     ensure  => installed
   }
 
