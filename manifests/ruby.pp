@@ -8,9 +8,9 @@ class langs::ruby {
   }
 
   if(!defined(Package['ruby1.9.1-dev'])) {
-   package{'ruby1.9.1-dev':
-     ensure  => installed
-   }
+    package{'ruby1.9.1-dev':
+      ensure  => installed
+    }
   }
 
 
@@ -18,7 +18,7 @@ class langs::ruby {
 
   rvm::system_user { $username: }
 
-  $ruby2 = 'ruby-2.1.0'
+  $ruby2 = 'ruby-2.1.2'
 
   if $rvm_installed=="true" {
     package{['libgdbm-dev', 'libncurses5-dev', 'libtool',
