@@ -1,7 +1,5 @@
-# Class: ruby
-#
 # This module manages ruby
-class langs::ruby {
+class langs::ruby($user=false) {
 
   package{['rubygems1.9.1','rake']:
     ensure  => installed
@@ -13,10 +11,8 @@ class langs::ruby {
     }
   }
 
-
   include rvm
-
-  rvm::system_user { $username: }
+  rvm::system_user { $langs::ruby::user: }
 
   $ruby2 = 'ruby-2.1.2'
 
