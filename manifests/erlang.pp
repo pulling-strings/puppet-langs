@@ -4,7 +4,7 @@ class langs::erlang {
 
   apt::source { 'erlang-solutions':
       location    => 'http://binaries.erlang-solutions.com/debian',
-      release     => 'quantal',
+      release     => 'trusty',
       repos       => 'contrib',
       include_src => false,
   }
