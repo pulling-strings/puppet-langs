@@ -1,6 +1,12 @@
 # This module manages ruby
 class langs::ruby($user=false) {
 
+  exec{'gpg key fetch':
+    command => 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3',
+    user    => 'root',
+    path    => ['/usr/bin','/bin',]
+  } -> Class['rvm'] 
+
   package{['rubygems1.9.1','rake']:
     ensure  => installed
   }
@@ -12,6 +18,7 @@ class langs::ruby($user=false) {
   }
 
   include rvm
+
   rvm::system_user { $langs::ruby::user: }
 
   $ruby2 = 'ruby-2.1.2'
