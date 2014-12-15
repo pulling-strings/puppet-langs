@@ -1,11 +1,13 @@
 # This module manages ruby
 class langs::ruby($user=false) {
 
-  exec{'gpg key fetch':
-    command => 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3',
-    user    => 'root',
-    path    => ['/usr/bin','/bin',]
-  } -> Class['rvm'] 
+  unless($::rvm_installed=='true'){
+    exec{'gpg key fetch':
+      command => 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3',
+      user    => 'root',
+      path    => ['/usr/bin','/bin',],
+    } -> Class['rvm']
+  }
 
   package{['rubygems1.9.1','rake']:
     ensure  => installed
@@ -23,27 +25,27 @@ class langs::ruby($user=false) {
 
   $ruby2 = 'ruby-2.1.2'
 
-  if $rvm_installed=="true" {
+  if($::rvm_installed=='true'){
     package{['libgdbm-dev', 'libncurses5-dev', 'libtool',
               'pkg-config', 'libffi-dev']:
       ensure  => present
-      } ->
+    } ->
 
-      rvm_system_ruby {
-       'ruby-1.9':
-         ensure       => 'present';
+    rvm_system_ruby {
+      'ruby-1.9':
+        ensure       => 'present';
         $ruby2:
           ensure      => 'present',
           default_use => true;
-      }
+    }
 
-      rvm_gem {
-        'bundler':
-          ruby_version => $ruby2,
-          require      => Rvm_system_ruby[$ruby2];
-        'rake':
-          ruby_version => $ruby2,
-          require      => Rvm_system_ruby[$ruby2];
-      }
+    rvm_gem {
+     'bundler':
+        ruby_version => $ruby2,
+        require      => Rvm_system_ruby[$ruby2];
+      'rake':
+        ruby_version => $ruby2,
+        require      => Rvm_system_ruby[$ruby2];
+    }
   }
 }
