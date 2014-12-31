@@ -22,9 +22,9 @@ class langs::go {
   }
 
   
-  file{'/etc/profile.d/go.sh':
-    content  => 'export PATH=$PATH:/usr/local/go/bin'
+  file{'/usr/bin/go':
+    ensure => link,
+    target => "${target}/${release}/go/bin/go"
   }
-
 
 }
