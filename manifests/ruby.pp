@@ -26,8 +26,10 @@ class langs::ruby($user=false) {
   $ruby2 = 'ruby-2.1.2'
 
   if($::rvm_installed=='true'){
-    package{['libgdbm-dev', 'libncurses5-dev', 'libtool',
-              'pkg-config', 'libffi-dev']:
+
+    ensure_resource('package', 'pkg-config', {ensure => present})
+
+    package{['libgdbm-dev', 'libncurses5-dev', 'libtool', 'libffi-dev']:
       ensure  => present
     } ->
 

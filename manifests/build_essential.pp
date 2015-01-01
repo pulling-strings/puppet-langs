@@ -1,8 +1,4 @@
-class build_essential {
-
-  if (!defined(Package['build-essential'])) {
-    package{"build-essential":
-      ensure	=> "installed"
-    }
-  }
+# includeing build_essential
+class langs::build_essential {
+  ensure_resource('package', 'build-essential', {ensure => present})
 }
