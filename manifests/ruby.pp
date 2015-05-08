@@ -9,9 +9,7 @@ class langs::ruby($user=false) {
     } -> Class['rvm']
   }
 
-  $rubies = ['rubygems1.9.1','ruby1.9.1-dev','ruby2.0-dev','ruby2.1-dev','rake']
-
-  ensure_resource('package', $rubies , {ensure => installed})
+  ensure_packages(['rubygems1.9.1','ruby1.9.1-dev', 'build-essential'])
 
   include rvm
 
