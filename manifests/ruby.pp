@@ -26,15 +26,13 @@ class langs::ruby($user=false) {
     } ->
 
     rvm_system_ruby {
-      'ruby-1.9':
-        ensure       => 'present';
-        $ruby2:
-          ensure      => 'present',
-          default_use => true;
+      $ruby2:
+        ensure      => 'present',
+        default_use => true;
     }
 
     rvm_gem {
-     'bundler':
+      'bundler':
         ruby_version => $ruby2,
         require      => Rvm_system_ruby[$ruby2];
       'rake':
