@@ -21,7 +21,9 @@ class langs::ruby($user=false) {
 
     ensure_resource('package', 'pkg-config', {ensure => present})
 
-    package{['libgdbm-dev', 'libncurses5-dev', 'libtool', 'libffi-dev']:
+    package{['libgdbm-dev', 'libncurses5-dev', 'libtool', 'libffi-dev',
+             'libreadline6-dev', 'libyaml-dev', 'libsqlite3-dev', 'sqlite3',
+             'autoconf', 'automake', 'bison']:
       ensure  => present
     } ->
 
