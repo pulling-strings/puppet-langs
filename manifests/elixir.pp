@@ -1,6 +1,6 @@
 # setting up elixir lang
 class langs::elixir {
-  $version = 'v1.0.4'
+  $version = 'v1.0.5'
 
   ensure_resource('package', 'unzip', {'ensure' => 'present' })
 
@@ -13,7 +13,7 @@ class langs::elixir {
   archive { $version:
     ensure        => present,
     url           => $url,
-    digest_string => 'bf7225c6424371d52b22a12d6a9d99cb',
+    digest_string => '03afda3282f2c44a2a9c97f0a093516f',
     src_target    => '/usr/src',
     target        => "/usr/share/elixir",
     extension     => 'zip',
