@@ -1,10 +1,10 @@
 # Setting up go lang
 class langs::go {
-  $version = '1.4'
+  $version = '1.5'
   $release = "go${version}.linux-amd64"
   $url = "https://storage.googleapis.com/golang/${release}.tar.gz"
   $target = '/usr/local/'
-  $sum = 'cd82abcb0734f82f7cf2d576c9528cebdafac4c6'
+  $sum = '5817fa4b2252afdb02e11e8b9dc1d9173ef3bd5a'
 
   archive {$release:
     ensure        => present,
