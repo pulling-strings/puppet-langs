@@ -1,7 +1,5 @@
 # Installing erlang
 class langs::erlang {
-  include apt::update
-
   apt::source { 'erlang-solutions':
       location    => 'http://packages.erlang-solutions.com/ubuntu',
       release     => 'trusty',
