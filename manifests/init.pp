@@ -6,7 +6,6 @@ class langs {
   include langs::go
   include langs::node
   include langs::elixir
-  include langs::coffeescript
   include langs::build_essential
 
   class{'jdk':
