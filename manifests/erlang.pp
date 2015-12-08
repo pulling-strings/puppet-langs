@@ -1,15 +1,17 @@
 # Installing erlang
 class langs::erlang {
   apt::source { 'erlang-solutions':
-      location    => 'http://packages.erlang-solutions.com/ubuntu',
-      release     => 'trusty',
-      repos       => 'contrib',
-      include_src => false,
+      location => 'http://packages.erlang-solutions.com/ubuntu',
+      release  => 'trusty',
+      repos    => 'contrib',
+      include  => {
+        src => false
+      },
   }
 
   apt::key {'erlang-solutions':
-    key        => 'D208507CA14F4FCA',
-    key_source => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
+    id     => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA',
+    source => 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc',
   } ->
 
   Exec['apt_update'] ->
