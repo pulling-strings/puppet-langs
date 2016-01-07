@@ -8,4 +8,11 @@ class langs::elm(
     path    => ['/usr/bin','/bin',],
     require => Package['nodejs']
   }
+
+  exec{'install elm-oracle':
+    command => "npm install -g elm-oracle",
+    user    => 'root',
+    path    => ['/usr/bin','/bin',],
+    require => Package['nodejs']
+  }
 }
