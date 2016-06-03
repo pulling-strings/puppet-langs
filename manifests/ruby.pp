@@ -9,7 +9,7 @@ class langs::ruby($user=false) {
     } -> Class['rvm']
   }
 
-  ensure_packages(['rubygems','ruby2.2-dev', 'build-essential'])
+  ensure_packages(['rubygems','ruby2.3-dev', 'build-essential'])
 
   include rvm
 

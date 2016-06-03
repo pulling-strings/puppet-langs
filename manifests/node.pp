@@ -6,8 +6,8 @@ class langs::node {
   }
 
   apt::source { 'nodesource':
-      location => 'https://deb.nodesource.com/node_0.10',
-      release  => 'vivid',
+      location => 'https://deb.nodesource.com/node_4.x',
+      release  => 'xenial',
       repos    => 'main',
       include  => {
         src => true,
