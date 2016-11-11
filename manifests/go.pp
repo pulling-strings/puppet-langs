@@ -1,10 +1,10 @@
 # Setting up go lang
 class langs::go {
-  $version = '1.5.3'
+  $version = '1.7.3'
   $release = "go${version}.linux-amd64"
   $url = "https://storage.googleapis.com/golang/${release}.tar.gz"
   $target = '/usr/local/'
-  $sum = '43afe0c5017e502630b1aea4d44b8a7f059bf60d7f29dfd58db454d4e4e0ae53'
+  $sum = '79430a0027a09b0b3ad57e214c4c1acfdd7af290961dd08d322818895af1ef44'
 
   archive {$release:
     ensure        => present,
@@ -14,6 +14,7 @@ class langs::go {
     src_target    => '/usr/src',
     target        => $target,
     extension     => 'tar.gz',
+    timeout       => '360'
   } ->
 
   file{'/usr/local/go':
