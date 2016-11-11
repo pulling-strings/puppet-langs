@@ -2,7 +2,7 @@
 class langs::erlang {
   apt::source { 'erlang-solutions':
       location => 'http://packages.erlang-solutions.com/ubuntu',
-      release  => 'trusty',
+      release  => 'xenial',
       repos    => 'contrib',
       include  => {
         src => false
