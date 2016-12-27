@@ -1,6 +1,6 @@
 # Setting up elm-lang.org
 class langs::elm(
-  $version = '0.17'
+  $version = '0.18'
 ){
   exec{'install elm':
     command => "npm install -g elm@${version}",
