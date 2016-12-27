@@ -7,8 +7,4 @@ class langs {
   include langs::node
   include langs::elixir
   include langs::build_essential
-
-  class{'jdk':
-    version => 7
-  }
 }
