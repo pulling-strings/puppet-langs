@@ -7,7 +7,7 @@ class langs::elm(
     user    => 'root',
     path    => ['/usr/bin','/bin',],
     require => Package['nodejs'],
-    unless  => "/usr/bin/elm | grep ${version}"
+    unless  => "test -f /usr/bin/elm && /usr/bin/elm | grep ${version}"
   }
 
   exec{'install elm-oracle':
