@@ -16,7 +16,7 @@ class langs::erlang {
 
   Exec['apt_update'] ->
 
-  package{'erlang':
+  package{'erlang-nox':
     ensure  => present,
   }
 
