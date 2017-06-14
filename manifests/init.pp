@@ -5,6 +5,5 @@ class langs {
   include langs::erlang
   include langs::go
   include langs::node
-  include langs::elixir
   include langs::build_essential
 }
