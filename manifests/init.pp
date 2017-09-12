@@ -2,8 +2,6 @@
 class langs {
   include langs::ruby
   include langs::elm
-  include langs::erlang
-  include langs::go
   include langs::node
   include langs::build_essential
 }
