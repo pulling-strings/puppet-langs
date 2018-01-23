@@ -2,11 +2,11 @@
 class langs::go(
   $timeout = '900'
 ){
-  $version = '1.7.5'
+  $version = '1.9.3'
   $release = "go${version}.linux-amd64"
   $url = "https://storage.googleapis.com/golang/${release}.tar.gz"
   $target = '/usr/local/'
-  $sum = '2e4dd6c44f0693bef4e7b46cc701513d74c3cc44f2419bf519d7868b12931ac3'
+  $sum = 'a4da5f4c07dfda8194c4621611aeb7ceaab98af0b38bfb29e1be2ebb04c3556c'
 
   archive {$release:
     ensure        => present,

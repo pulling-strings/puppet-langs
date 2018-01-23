@@ -3,5 +3,6 @@ class langs {
   include langs::ruby
   include langs::elm
   include langs::node
+  include langs::go
   include langs::build_essential
 }
