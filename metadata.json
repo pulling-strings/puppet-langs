@@ -1,0 +1,41 @@
+{
+  "name": "puppet-lang",
+  "version": "0.2.0",
+  "author": "Ronen Narkis",
+  "summary": "Module for setting up programming languages",
+  "license": "Apache-2.0",
+  "source": "https://github.com/pulling-strings/puppet-langs",
+  "project_page": "https://github.com/pulling-strings/puppet-langs",
+  "issues_url": "https://github.com/pulling-strings/puppet-langs",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.1.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 2.1.0"
+    }
+  ],
+  "data_provider": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "9.0"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.0.0"
+    }
+  ]
+}
