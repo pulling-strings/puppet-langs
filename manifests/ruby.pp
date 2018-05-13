@@ -9,7 +9,7 @@ class langs::ruby($user=false) {
     } -> Class['rvm']
   }
 
-  ensure_packages(['rubygems','ruby2.3-dev', 'build-essential'])
+  ensure_packages(['rubygems','ruby2.5-dev', 'build-essential'])
 
   include rvm
 
@@ -25,9 +25,9 @@ class langs::ruby($user=false) {
               'libreadline6-dev', 'libyaml-dev', 'libsqlite3-dev', 'sqlite3',
               'autoconf', 'automake', 'bison']:
       ensure  => present
-    } ->
+    }
 
-    rvm_system_ruby {
+    -> rvm_system_ruby {
       $ruby2:
         ensure      => 'present',
         default_use => true;
